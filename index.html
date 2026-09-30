@@ -2,48 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Random Meow - Home</title>
+    <title>Random Meow</title>
     <meta name="keywords" content="random meow, random-meow1" />
     <meta name="description" content="Homepage for Random Meow" />
-    <style type="text/css">
-        body {
-            background-color: black;
-            color: white;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            padding: 10px;
-        }
-        
-        h1 {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 100px;
-            font-weight: 900;
-        }
-        
-        h2 {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 30px;
-            font-weight: 900;
-        }
-
-        a {
-            color: green;
-        }
-
-        .banner {
-            background-color: white;
-            color: black;
-            padding: 10px;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/images/circle-logo.png">
   </head>
   <body>
-    <h1>Random Meow</h1>
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 24px;">
+        <a href="https://github.com/Random-Meow1" class="nostyle"><img src="assets/images/circle-logo.png" height="100px" style="
+            border: solid 3px white;
+            border-radius: 100%;
+            box-shadow: rgba(255, 82, 217, 0.8) 10px 7px 30px 0px, rgba(91, 219, 68, 0.8) -10px -7px 30px 0px;
+        "></a>
+        <a href="https://github.com/Random-Meow1" class="nostyle"><h1>Random Meow</h1></a>
+    </div>
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 12px;">
+        <a href="https://github.com/Random-Meow1/random-meow1.github.io" class="button" target="_blank" rel="noopener noreferrer">Open source</a>
+        <a href="https://github.com/Random-Meow1" class="button" target="_blank" rel="noopener noreferrer">My profile</a>
+        <a href="https://payhip.com/randommeow/contact" class="button" target="_blank" rel="noopener noreferrer">Contact me</a>
+        <a href="information/socials.html" class="button">My socials</a>
+    </div>
+    <p>Hi, I'm Random Meow! I am an Apple fan, cat lover, programmer, pianist, video editor, and I also might Rickroll you. I also play Minecraft and Geometry Dash.</p>
+    <p>I like doing creative things, including:</p>
+    <ul>
+        <li>Programming</li>
+        <li>Video editing</li>
+        <li>Music making</li>
+        <li>Graphic design</li>
+        <li>Photo editing</li>
+    </ul>
+    <p>Also I do have extensive knowledge about Apple products, like iPhone and Mac, so I am happy to help anyone with issues. (I do know things about Android or PC, but I may not be able to help as much as I can with Apple)</p>
+    <p style="opacity: 50%;">Can you find the <a href="rickroll/not-a-rickroll.html">HIDDEN RICKROLL</a>?</p>
+
+    <h2>Projects</h2>
 
     <div class="banner">
-        <h2><a href="audio-visualizer/audio-visualizer.html">Audio Visualizer</a></h2>
+        <h3>Audio Visualizer</h2>
         <p>Upload some music and press play to watch my version of an audio visualizer<br>Credit to <a href="https://blog.logrocket.com/audio-visualizer-from-scratch-javascript/">LogRocket</a> for the tutorial</p>
+        <a href="projects/audio-visualizer/audio-visualizer.html" class="button">Open</a>
+    </div>
+
+    <div class="banner">
+        <h3>Auto Pong</h2>
+        <p>Watch two AI players play a game of Pong. (in development)</p>
+        <a href="projects/auto-pong/index.html" class="button">Open</a>
     </div>
   </body>
 </html>
