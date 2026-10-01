@@ -42,10 +42,13 @@ a {
     padding: 5px;
     border-radius: 10px;
     text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
     color: rgb(255, 82, 217);
+    transform: scale(1.1);
+    text-decoration: underline;
 }
 
 a.button {
@@ -80,15 +83,9 @@ a.nostyle {
     border-radius: 30px;
 }
 
-a {
-    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-a:hover {
-    transform: scale(1.1);
-}
-
 header {
+    position: sticky;
+    top: 0;
     background: rgba(0, 0, 0, 0.2);
     padding: 20px 20px;
     width: 100%;
