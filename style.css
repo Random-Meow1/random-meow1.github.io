@@ -48,7 +48,6 @@ a {
 a:hover {
     color: rgb(255, 82, 217);
     transform: scale(1.1);
-    text-decoration: underline;
 }
 
 a.button {
@@ -101,6 +100,16 @@ header:hover {
     max-width: 1200px;   /* Optional: stops content from getting unnaturally wide on big screens */
     margin: 0 auto;      /* Centers the container on larger displays */
 }
+
+.mouseelement {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+         
+    pointer-events: none;
+}
+
 
 /* Mobile styles */
 @media (pointer:none), (pointer:coarse) {
