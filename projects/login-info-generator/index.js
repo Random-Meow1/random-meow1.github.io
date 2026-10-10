@@ -151,3 +151,22 @@ randomPasswordInputs.generate.addEventListener('click', function () {
 
     randomPasswordInputs.randomPassword.textContent = password;
 });
+
+
+// Random Passcode
+const randomPasscodeInputs = {
+    generate: document.getElementById('generate-random-passcode'),
+    randomPasscode: document.getElementById('random-passcode-list'),
+    length: document.getElementById('length-random-passcode')
+}
+
+randomPasscodeInputs.generate.addEventListener('click', function () {
+    let passcode = '';
+    const length = randomPasscodeInputs.length.value;
+
+    for (let i = 0; i < length; i++) {
+        passcode += randomDigit();
+    }
+
+    randomPasscodeInputs.randomPasscode.textContent = passcode;
+});
