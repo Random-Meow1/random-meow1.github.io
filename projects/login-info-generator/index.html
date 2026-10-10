@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Information Generator</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="shortcut icon" href="../../assets/images/circle-logo.png">
+</head>
+<body>
+    <header>
+        <a href="../../index.html" class="navigation-backward">Home</a>
+        <a href="../all-projects.html" class="navigation-backward">All Projects</a>
+    </header>
+
+    <main class="container">
+        <h1>Login Information Generator</h1>
+
+        <h2>Identity</h2>
+
+        <div class="banner">
+            <h3>Random username</h3>
+
+            <p style="opacity: 50%;">Note: This uses the 10,000 most common English words in the repository <a href="https://github.com/first20hours/google-10000-english" target="_blank" rel="noopener noreferrer">google-10000-english</a> by Josh Kaufman (first20hours)</p>
+
+            <input type="checkbox" id="include-number-random-username">
+            <label for="include-number-random-username">Include number at end</label>
+
+            <br><br>
+
+            <input type="number" id="wordcount-random-username" min="1" max="6" value="2">
+            <label for="wordcount-random-username">Amount of words</label>
+
+            <br><br>
+
+            <input type="text" id="word-separator-random-username" value="-">
+            <label for="word-separator-random-username">Word separator</label>
+
+            <br><br>
+
+            <button id="generate-random-username">Generate</button>
+            <p><span id="random-username-list"></span></p>
+        </div>
+
+        <h2>Security</h2>
+
+        <div class="banner">
+            <h3>Random password</h3>
+
+            <input type="checkbox" id="include-symbols-random-password" checked>
+            <label for="include-symbols-random-password">Include symbols</label>
+
+            <br><br>
+
+            <input type="checkbox" id="include-digits-random-password" checked>
+            <label for="include-digits-random-password">Include digits</label>
+
+            <br><br>
+
+            <input type="number" id="length-random-password" min="1" max="100" value="32">
+            <label for="length-random-password">Length</label>
+
+            <br><br>
+
+            <button id="generate-random-password">Generate</button>
+            <p><span id="random-password-list"></span></p>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>

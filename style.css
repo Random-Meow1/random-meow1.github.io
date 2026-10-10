@@ -111,6 +111,44 @@ a.navigation-backward:hover {
     color: black;
 }
 
+button {
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+    background: rgb(91, 219, 68);
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Helps smooth out size/layout changes */
+}
+
+button:hover {
+    background: rgb(255, 82, 217);
+    color: white;
+    transform: scale(1.1);
+}
+
+button:disabled {
+    background: rgb(127, 127, 127);
+    color: white;
+    transform: scale(0.9);
+    opacity: 50%;
+}
+
+input {
+    font-size: 24px;
+    border: none;
+    background: rgba(100, 100, 100, 0.2);
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    margin: 4px;
+}
+
+
+
 .banner {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 5px 30px 5px 30px;
