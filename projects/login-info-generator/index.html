@@ -1,88 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Information Generator</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="shortcut icon" href="../../assets/images/circle-logo.png">
-</head>
-<body>
-    <header>
-        <a href="../../index.html" class="navigation-backward">Home</a>
-        <a href="../all-projects.html" class="navigation-backward">All Projects</a>
-    </header>
 
-    <main class="container">
-        <h1>Login Information Generator</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Information Generator</title>
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="shortcut icon" href="../../assets/images/circle-logo.png">
+    </head>
 
-        <h2>Identity</h2>
+    <body>
+        <header>
+            <a href="../../index.html" class="navigation-backward">Home</a>
+            <a href="../all-projects.html" class="navigation-backward">All Projects</a>
+        </header>
 
-        <div class="banner">
-            <h3>Random username</h3>
+        <main class="container">
+            <h1>Login Information Generator</h1>
 
-            <p style="opacity: 50%;">Note: This uses the 10,000 most common English words in the repository <a href="https://github.com/first20hours/google-10000-english" target="_blank" rel="noopener noreferrer">google-10000-english</a> by Josh Kaufman (first20hours)</p>
+            <h2>Identity</h2>
 
-            <input type="checkbox" id="include-number-random-username">
-            <label for="include-number-random-username">Include number at end</label>
+            <div class="banner">
+                <h3>Random username</h3>
 
-            <label for="number-digits-amount-random-username">with</label>
-            <input type="number" id="number-digits-amount-random-username" min="1" max="5" value="2">
-            <label for="number-digits-amount-random-username">digit<span id="number-digits-amount-random-username-label-plural-end">s</span></label>
+                <p style="opacity: 50%;">Note: This uses the 10,000 most common English words in the repository <a
+                        href="https://github.com/first20hours/google-10000-english" target="_blank"
+                        rel="noopener noreferrer">google-10000-english</a> by Josh Kaufman (first20hours)</p>
 
-            <br><br>
+                <input type="checkbox" id="include-number-random-username">
+                <label for="include-number-random-username">Include number at end</label>
 
-            <input type="number" id="wordcount-random-username" min="1" max="6" value="2">
-            <label for="wordcount-random-username">Amount of words</label>
+                <label for="number-digits-amount-random-username">with</label>
+                <input type="number" id="number-digits-amount-random-username" min="1" max="5" value="2">
+                <label for="number-digits-amount-random-username">digit<span
+                        id="number-digits-amount-random-username-label-plural-end">s</span></label>
 
-            <br><br>
+                <br><br>
 
-            <input type="text" id="word-separator-random-username" value="-">
-            <label for="word-separator-random-username">Word separator</label>
+                <input type="number" id="wordcount-random-username" min="1" max="6" value="2">
+                <label for="wordcount-random-username">Amount of words</label>
 
-            <br><br>
+                <br><br>
 
-            <button id="generate-random-username">Generate</button>
-            <p><span id="random-username-list"></span></p>
-        </div>
+                <input type="text" id="word-separator-random-username" value="-">
+                <label for="word-separator-random-username">Word separator</label>
 
-        <h2>Security</h2>
+                <br><br>
 
-        <div class="banner">
-            <h3>Random password</h3>
+                <button id="generate-random-username">Generate</button>
+                <p><span id="random-username-list"></span></p>
+            </div>
 
-            <input type="checkbox" id="include-symbols-random-password" checked>
-            <label for="include-symbols-random-password">Include symbols</label>
+            <h2>Security</h2>
 
-            <br><br>
+            <div class="banner">
+                <h3>Random password</h3>
 
-            <input type="checkbox" id="include-digits-random-password" checked>
-            <label for="include-digits-random-password">Include digits</label>
+                <input type="checkbox" id="include-symbols-random-password" checked>
+                <label for="include-symbols-random-password">Include symbols</label>
 
-            <br><br>
+                <br><br>
 
-            <input type="number" id="length-random-password" min="1" max="100" value="32">
-            <label for="length-random-password">Length</label>
+                <input type="checkbox" id="include-digits-random-password" checked>
+                <label for="include-digits-random-password">Include digits</label>
 
-            <br><br>
+                <br><br>
 
-            <button id="generate-random-password">Generate</button>
-            <p><span id="random-password-list"></span></p>
-        </div>
+                <input type="number" id="length-random-password" min="1" max="100" value="32">
+                <label for="length-random-password">Length</label>
 
-        <div class="banner">
-            <h3>Random numeric passcode</h3>
+                <br><br>
 
-            <input type="number" id="length-random-passcode" min="4" max="6" value="4" step="2">
-            <label for="length-random-passcode">Length</label>
+                <button id="generate-random-password">Generate</button>
+                <p><span id="random-password-list"></span></p>
+            </div>
 
-            <br><br>
+            <div class="banner">
+                <h3>Random numeric passcode</h3>
 
-            <button id="generate-random-passcode">Generate</button>
-            <p><span id="random-passcode-list"></span></p>
-        </div>
-    </main>
+                <input type="number" id="length-random-passcode" min="4" max="10" value="4" step="2">
+                <label for="length-random-passcode">Length</label>
 
-    <script src="index.js"></script>
-</body>
+                <br><br>
+
+                <button id="generate-random-passcode">Generate</button>
+                <p><span id="random-passcode-list"></span></p>
+            </div>
+        </main>
+
+        <script src="index.js"></script>
+    </body>
+
 </html>

@@ -9,15 +9,15 @@ const lowercaseLetters = Array.from({ length: 26 }, (_, i) => String.fromCharCod
 
 // All letters and digits
 const allCharactersWithoutSymbols = [
-  ...digits,
-  ...uppercaseLetters,
-  ...lowercaseLetters
+    ...digits,
+    ...uppercaseLetters,
+    ...lowercaseLetters
 ];
 
 // All letters
 const allLetters = [
-  ...uppercaseLetters,
-  ...lowercaseLetters
+    ...uppercaseLetters,
+    ...lowercaseLetters
 ];
 
 // Standard symbols and punctuation (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)
@@ -25,10 +25,10 @@ const asciiSymbols = '!@#$%^&*()_+-=[]{}|;:,.<>?'.split('');
 
 // All printable ASCII characters combined (94 characters)
 const allCharacters = [
-  ...digits,
-  ...uppercaseLetters,
-  ...lowercaseLetters,
-  ...asciiSymbols
+    ...digits,
+    ...uppercaseLetters,
+    ...lowercaseLetters,
+    ...asciiSymbols
 ];
 
 function randomCharacter(includeSymbols) {
@@ -51,10 +51,10 @@ async function loadCommonWords() {
     // Pulls the raw list directly from GitHub
     const response = await fetch('https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt');
     const text = await response.text();
-    
+
     // Splits into an array of 10,000 clean words
     const commonWords = text.split(/\r?\n/);
-    
+
     return commonWords;
 }
 
@@ -80,32 +80,35 @@ const randomUsernameInputs = {
 }
 
 randomUsernameInputs.generate.addEventListener('click',
-function () {
-    let username = '';
-    const includeNumber = randomUsernameInputs.includeNumber.checked;
-    const numOfDigits = randomUsernameInputs.numOfDigits.value;
-    const wordCount = randomUsernameInputs.wordCount.value;
-    const wordSeparator = randomUsernameInputs.wordSeparator.value;
+    function () {
+        let username = '';
+        const includeNumber = randomUsernameInputs.includeNumber.checked;
+        const numOfDigits = randomUsernameInputs.numOfDigits.value;
+        const wordCount = randomUsernameInputs.wordCount.value;
+        const wordSeparator = randomUsernameInputs.wordSeparator.value;
 
-    for (let i = 0; i < wordCount; i++) {
-        username += randomCommonWord();
-        if (i < wordCount - 1) {
-            username += wordSeparator;
+        for (let i = 0; i < wordCount; i++) {
+            username += randomCommonWord();
+            if (i < wordCount - 1) {
+                username += wordSeparator;
+            }
         }
-    }
 
-    if (includeNumber) {
-        for (let i = 0; i < numOfDigits; i++) {
-            username += randomDigit();
+        if (includeNumber) {
+            for (let i = 0; i < numOfDigits; i++) {
+                username += randomDigit();
+            }
         }
-    }
 
-    randomUsernameInputs.randomUsername.textContent = username;
-});
+        randomUsernameInputs.randomUsername.textContent = username;
+    });
 
-randomUsernameInputs.numOfDigits.addEventListener('change', function () {
-    const numOfDigits = randomUsernameInputs.numOfDigits.value;
+randomUsernameInputs.numOfDigits.addEventListener('input', function () {
+    const numOfDigits = parseInt(this.value);
     const labelPluralEnd = document.getElementById('number-digits-amount-random-username-label-plural-end');
+
+    if (numOfDigits > this.max) this.value = this.max;
+    if (numOfDigits < this.min) this.value = this.min;
 
     if (numOfDigits == 1) {
         labelPluralEnd.textContent = '';
@@ -114,6 +117,13 @@ randomUsernameInputs.numOfDigits.addEventListener('change', function () {
     }
 });
 
+
+randomUsernameInputs.wordCount.addEventListener('input', function () {
+    const value = parseInt(this.value);
+    if (isNaN(value)) return;
+    if (value > this.max) this.value = this.max;
+    if (value < this.min) this.value = this.min;
+});
 
 // Random Password
 const randomPasswordInputs = {
@@ -152,6 +162,12 @@ randomPasswordInputs.generate.addEventListener('click', function () {
     randomPasswordInputs.randomPassword.textContent = password;
 });
 
+randomPasswordInputs.length.addEventListener('input', function () {
+    const value = parseInt(this.value);
+    if (value > this.max) this.value = this.max; // Automatically prevent overflows by resetting to the max length
+    if (value < this.min) this.value = this.min;
+});
+
 
 // Random Passcode
 const randomPasscodeInputs = {
@@ -169,4 +185,10 @@ randomPasscodeInputs.generate.addEventListener('click', function () {
     }
 
     randomPasscodeInputs.randomPasscode.textContent = passcode;
+});
+
+randomPasscodeInputs.length.addEventListener('input', function () {
+    const value = parseInt(this.value);
+    if (value > this.max) this.value = this.max;
+    if (value < this.min) this.value = this.min;
 });
