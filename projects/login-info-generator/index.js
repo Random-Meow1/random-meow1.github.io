@@ -74,6 +74,7 @@ const randomUsernameInputs = {
     generate: document.getElementById('generate-random-username'),
     randomUsername: document.getElementById('random-username-list'),
     includeNumber: document.getElementById('include-number-random-username'),
+    numOfDigits: document.getElementById('number-digits-amount-random-username'),
     wordCount: document.getElementById('wordcount-random-username'),
     wordSeparator: document.getElementById('word-separator-random-username')
 }
@@ -82,6 +83,7 @@ randomUsernameInputs.generate.addEventListener('click',
 function () {
     let username = '';
     const includeNumber = randomUsernameInputs.includeNumber.checked;
+    const numOfDigits = randomUsernameInputs.numOfDigits.value;
     const wordCount = randomUsernameInputs.wordCount.value;
     const wordSeparator = randomUsernameInputs.wordSeparator.value;
 
@@ -93,12 +95,23 @@ function () {
     }
 
     if (includeNumber) {
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < numOfDigits; i++) {
             username += randomDigit();
         }
     }
 
     randomUsernameInputs.randomUsername.textContent = username;
+});
+
+randomUsernameInputs.numOfDigits.addEventListener('change', function () {
+    const numOfDigits = randomUsernameInputs.numOfDigits.value;
+    const labelPluralEnd = document.getElementById('number-digits-amount-random-username-label-plural-end');
+
+    if (numOfDigits == 1) {
+        labelPluralEnd.textContent = '';
+    } else {
+        labelPluralEnd.textContent = 's';
+    }
 });
 
 
