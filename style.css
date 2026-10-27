@@ -1,16 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
-    box-shadow:
-        inset rgba(255, 82, 217, 0.1) 50px 50px 500px 100px,
-        inset rgba(91, 219, 68, 0.1) -50px -50px 500px 100px;
     min-height: 100%;
 }
 
 body {
-    background-color: black;
+    background-color: rgb(11, 19, 11);
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
 
 html, body {
@@ -182,6 +184,31 @@ header:hover {
          
     pointer-events: none;
 }
+
+.video-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto; /* Overrides the inline height attribute */
+  border: none;
+  display: block;
+}
+
+.short-embed {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto; /* Overrides the inline height attribute */
+  border: none;
+  display: block;
+}
+
+.half-short-embed {
+  width: 50%;
+  aspect-ratio: 9 / 16;
+  height: auto; /* Overrides the inline height attribute */
+  border: none;
+  display: block;
+}
+
 
 
 /* Mobile styles */
